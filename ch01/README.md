@@ -17,6 +17,15 @@
     llvm-dis test.bc -o test.ll
 
 
+## link & run
 
- 
-    
+    clang -emit-llvm -S test1.c -o test1.ll
+    clang -emit-llvm -S test2.c -o test2.ll
+    llvm-as test1.ll -o test1.bc
+    llvm-as test2.ll -o test2.bc
+    # link
+    llvm-link test1.bc test2.bc -o output.bc
+     
+    # run
+    lli output.bc
+
