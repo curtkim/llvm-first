@@ -4,5 +4,6 @@ pkgs.mkShell rec {
   buildInputs = [ 
     pkgs.llvmPackages_6.libllvm
     pkgs.clang_6
+    pkgs.lldb_6
   ];
 }

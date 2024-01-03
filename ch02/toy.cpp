@@ -27,6 +27,7 @@ static int get_token() {
   while (isspace(LastChar))
     LastChar = fgetc(file);
 
+  printf("%c\n", LastChar);
   if (isalpha(LastChar)) {
     Identifier_string = LastChar;
     while (isalnum((LastChar = fgetc(file))))
@@ -63,6 +64,7 @@ static int get_token() {
 
   int ThisChar = LastChar;
   LastChar = fgetc(file);
+  printf("ThisChar= %c\n", ThisChar);
   return ThisChar;
 }
 
